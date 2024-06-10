@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import AppProvider from './AppContext';
+import Question from './Question';
+import StartButton from './StartButton';
+import Header from './Header';
+import Character from './Character';
+import ResetButton from './ResetButton';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <div>
+    <AppProvider>
+      <div className="page-wrapper">
+        <Header />
+        <div className="content-wrapper">
+          <StartButton />
+          <Question />
+          <Character />
+        </div>
+
+        <ResetButton />
+      </div>
+    </AppProvider>
+  </div>
+);
 
 export default App;
